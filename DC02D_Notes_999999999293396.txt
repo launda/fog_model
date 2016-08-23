@@ -1,0 +1,518 @@
+NOTES FOR DC02D COMPLETED ON 11/08/2016
+____________________________________________________________________________________________
+____________________________________________________________________________________________
+
+DATA FILE
+
+
+
+Byte Location , Byte Size  , Explanation
+--------------------------------------------------------------------------------------------
+
+
+1-2           ,2           , Record identifier - dc
+4-9           ,6           , Bureau of Meteorology Station Number.
+11-50         ,40          , Station Name.
+52-61         ,10          , Day month year in DD/MM/YYYY format.
+63-68         ,6           , Precipitation in the 24 hours before 9am (local time). In mm.
+70            ,1           , ** Type of precipitation as a code number.
+72-77         ,6           , Precipitation since last observation, at 00 hours Local Time. In mm.
+79-84         ,6           , Precipitation since last observation, at 03 hours Local Time. In mm.
+86-91         ,6           , Precipitation since last observation, at 06 hours Local Time. In mm.
+93-98         ,6           , Precipitation since last observation, at 09 hours Local Time. In mm.
+100-105       ,6           , Precipitation since last observation, at 12 hours Local Time. In mm.
+107-112       ,6           , Precipitation since last observation, at 15 hours Local Time. In mm.
+114-119       ,6           , Precipitation since last observation, at 18 hours Local Time. In mm.
+121-126       ,6           , Precipitation since last observation, at 21 hours Local Time. In mm.
+128-132       ,5           , Evaporation in 24 hours before 9am (local time). In mm.
+134-138       ,5           , Maximum temperature in 24 hours after 9am (local time). In Degrees C.
+140-144       ,5           , Minimum temperature in 24 hours before 9am (local time). In Degrees C.
+146-150       ,5           , Minimum temperature on the ground in 24 hours before 9am (local time). In Degrees C.
+152-156       ,5           , Air temperature observation at 00 hours Local Time. In Degrees C.
+158-162       ,5           , Air temperature observation at 03 hours Local Time. In Degrees C.
+164-168       ,5           , Air temperature observation at 06 hours Local Time. In Degrees C.
+170-174       ,5           , Air temperature observation at 09 hours Local Time. In Degrees C.
+176-180       ,5           , Air temperature observation at 12 hours Local Time. In Degrees C.
+182-186       ,5           , Air temperature observation at 15 hours Local Time. In Degrees C.
+188-192       ,5           , Air temperature observation at 18 hours Local Time. In Degrees C.
+194-198       ,5           , Air temperature observation at 21 hours Local Time. In Degrees C.
+200-204       ,5           , Dew point temperature observation at 00 hours Local Time. In Degrees C.
+206-210       ,5           , Dew point temperature observation at 03 hours Local Time. In Degrees C.
+212-216       ,5           , Dew point temperature observation at 06 hours Local Time. In Degrees C.
+218-222       ,5           , Dew point temperature observation at 09 hours Local Time. In Degrees C.
+224-228       ,5           , Dew point temperature observation at 12 hours Local Time. In Degrees C.
+230-234       ,5           , Dew point temperature observation at 15 hours Local Time. In Degrees C.
+236-240       ,5           , Dew point temperature observation at 18 hours Local Time. In Degrees C.
+242-246       ,5           , Dew point temperature observation at 21 hours Local Time. In Degrees C.
+248-252       ,5           , Wet bulb temperature observation at 00 hours Local Time. In Degrees C.
+254-258       ,5           , Wet bulb temperature observation at 03 hours Local Time. In Degrees C.
+260-264       ,5           , Wet bulb temperature observation at 06 hours Local Time. In Degrees C.
+266-270       ,5           , Wet bulb temperature observation at 09 hours Local Time. In Degrees C.
+272-276       ,5           , Wet bulb temperature observation at 12 hours Local Time. In Degrees C.
+278-282       ,5           , Wet bulb temperature observation at 15 hours Local Time. In Degrees C.
+284-288       ,5           , Wet bulb temperature observation at 18 hours Local Time. In Degrees C.
+290-294       ,5           , Wet bulb temperature observation at 21 hours Local Time. In Degrees C.
+296-298       ,3           , -*- Relative humidity for observation at 00 hours Local Time. In percentage %.
+300-302       ,3           , -*- Relative humidity for observation at 03 hours Local Time. In percentage %.
+304-306       ,3           , -*- Relative humidity for observation at 06 hours Local Time. In percentage %.
+308-310       ,3           , -*- Relative humidity for observation at 09 hours Local Time. In percentage %.
+312-314       ,3           , -*- Relative humidity for observation at 12 hours Local Time. In percentage %.
+316-318       ,3           , -*- Relative humidity for observation at 15 hours Local Time. In percentage %.
+320-322       ,3           , -*- Relative humidity for observation at 18 hours Local Time. In percentage %.
+324-326       ,3           , -*- Relative humidity for observation at 21 hours Local Time. In percentage %.
+328-332       ,5           , ***- Speed of maximum wind gust in knots.
+334-337       ,4           , ***- Wind run (km) above 10ft (3m) for 24 hours before 9am (local time).
+339-342       ,4           , ***- Wind run (km) below 10ft (3m) for 24 hours before 9am (local time).
+344           ,1           , -*-*, ***-  Occurrence of strong winds in 24 hours midnight to midnight (local time). (Y or N)
+346-350       ,5           , ***- Wind speed at 00 hours Local Time, measured in knots.
+352-356       ,5           , ***- Wind speed at 03 hours Local Time, measured in knots.
+358-362       ,5           , ***- Wind speed at 06 hours Local Time, measured in knots.
+364-368       ,5           , ***- Wind speed at 09 hours Local Time, measured in knots.
+370-374       ,5           , ***- Wind speed at 12 hours Local Time, measured in knots.
+376-380       ,5           , ***- Wind speed at 15 hours Local Time, measured in knots.
+382-386       ,5           , ***- Wind speed at 18 hours Local Time, measured in knots.
+388-392       ,5           , ***- Wind speed at 21 hours Local Time, measured in knots.
+394-398       ,5           , ***- Wind direction at 00 hours Local Time, measured in degrees.
+400-404       ,5           , ***- Wind direction at 03 hours Local Time, measured in degrees.
+406-410       ,5           , ***- Wind direction at 06 hours Local Time, measured in degrees.
+412-416       ,5           , ***- Wind direction at 09 hours Local Time, measured in degrees.
+418-422       ,5           , ***- Wind direction at 12 hours Local Time, measured in degrees.
+424-428       ,5           , ***- Wind direction at 15 hours Local Time, measured in degrees.
+430-434       ,5           , ***- Wind direction at 18 hours Local Time, measured in degrees.
+436-440       ,5           , ***- Wind direction at 21 hours Local Time, measured in degrees.
+442-443       ,2           , *** Present weather at 00 hours Local Time, as international code.
+445-446       ,2           , *** Present weather at 03 hours Local Time, as international code.
+448-449       ,2           , *** Present weather at 06 hours Local Time, as international code.
+451-452       ,2           , *** Present weather at 09 hours Local Time, as international code.
+454-455       ,2           , *** Present weather at 12 hours Local Time, as international code.
+457-458       ,2           , *** Present weather at 15 hours Local Time, as international code.
+460-461       ,2           , *** Present weather at 18 hours Local Time, as international code.
+463-464       ,2           , *** Present weather at 21 hours Local Time, as international code.
+466-467       ,2           , *** Past weather at 00 hours Local Time, as international code.
+469-470       ,2           , *** Past weather at 03 hours Local Time, as international code.
+472-473       ,2           , *** Past weather at 06 hours Local Time, as international code.
+475-476       ,2           , *** Past weather at 09 hours Local Time, as international code.
+478-479       ,2           , *** Past weather at 12 hours Local Time, as international code.
+481-482       ,2           , *** Past weather at 15 hours Local Time, as international code.
+484-485       ,2           , *** Past weather at 18 hours Local Time, as international code.
+487-488       ,2           , *** Past weather at 21 hours Local Time, as international code.
+490           ,1           , Occurrence of hail in 24 hrs midnight to midnight (local time). (Y or N).
+492           ,1           , Occurrence of fog in 24 hrs midnight to midnight (local time). (Y or N).
+494           ,1           , Thunder heard in 24 hrs midnight to midnight (local time). (Y or N).
+496-501       ,6           , Station level pressure at 00 hours Local Time, in hPa.
+503-508       ,6           , Station level pressure at 03 hours Local Time, in hPa.
+510-515       ,6           , Station level pressure at 06 hours Local Time, in hPa.
+517-522       ,6           , Station level pressure at 09 hours Local Time, in hPa.
+524-529       ,6           , Station level pressure at 12 hours Local Time, in hPa.
+531-536       ,6           , Station level pressure at 15 hours Local Time, in hPa.
+538-543       ,6           , Station level pressure at 18 hours Local Time, in hPa.
+545-550       ,6           , Station level pressure at 21 hours Local Time, in hPa.
+552-557       ,6           , -*- Vapour pressure at 00 hours Local Time, in hPa.
+559-564       ,6           , -*- Vapour pressure at 03 hours Local Time, in hPa.
+566-571       ,6           , -*- Vapour pressure at 06 hours Local Time, in hPa.
+573-578       ,6           , -*- Vapour pressure at 09 hours Local Time, in hPa.
+580-585       ,6           , -*- Vapour pressure at 12 hours Local Time, in hPa.
+587-592       ,6           , -*- Vapour pressure at 15 hours Local Time, in hPa.
+594-599       ,6           , -*- Vapour pressure at 18 hours Local Time, in hPa.
+601-606       ,6           , -*- Vapour pressure at 21 hours Local Time, in hPa.
+608-613       ,6           , -*- Saturated vapour pressure at 00 hours Local Time, in hPa.
+615-620       ,6           , -*- Saturated vapour pressure at 03 hours Local Time, in hPa.
+622-627       ,6           , -*- Saturated vapour pressure at 06 hours Local Time, in hPa.
+629-634       ,6           , -*- Saturated vapour pressure at 09 hours Local Time, in hPa.
+636-641       ,6           , -*- Saturated vapour pressure at 12 hours Local Time, in hPa.
+643-648       ,6           , -*- Saturated vapour pressure at 15 hours Local Time, in hPa.
+650-655       ,6           , -*- Saturated vapour pressure at 18 hours Local Time, in hPa.
+657-662       ,6           , -*- Saturated vapour pressure at 21 hours Local Time, in hPa.
+664           ,1           , Total cloud amount at 00 hours Local Time, in eighths.
+666           ,1           , Total cloud amount at 03 hours Local Time, in eighths.
+668           ,1           , Total cloud amount at 06 hours Local Time, in eighths.
+670           ,1           , Total cloud amount at 09 hours Local Time, in eighths.
+672           ,1           , Total cloud amount at 12 hours Local Time, in eighths.
+674           ,1           , Total cloud amount at 15 hours Local Time, in eighths.
+676           ,1           , Total cloud amount at 18 hours Local Time, in eighths.
+678           ,1           , Total cloud amount at 21 hours Local Time, in eighths.
+680           ,1           , Total amount of low cloud at 00 hours Local Time, in eighths.
+682           ,1           , Total amount of low cloud at 03 hours Local Time, in eighths.
+684           ,1           , Total amount of low cloud at 06 hours Local Time, in eighths.
+686           ,1           , Total amount of low cloud at 09 hours Local Time, in eighths.
+688           ,1           , Total amount of low cloud at 12 hours Local Time, in eighths.
+690           ,1           , Total amount of low cloud at 15 hours Local Time, in eighths.
+692           ,1           , Total amount of low cloud at 18 hours Local Time, in eighths.
+694           ,1           , Total amount of low cloud at 21 hours Local Time, in eighths.
+696           ,1           , Amount of first layer of low cloud at 00 hours Local Time, in eighths.
+698-701       ,4           , Height of base of first layer of low cloud at 00 hours Local Time, in m.
+703           ,1           , -* Code for type of first layer of low cloud at 00 hours Local Time.
+705           ,1           , Amount of first layer of low cloud at 03 hours Local Time, in eighths.
+707-710       ,4           , Height of base of first layer of low cloud at 03 hours Local Time, in m.
+712           ,1           , -* Code for type of first layer of low cloud at 03 hours Local Time.
+714           ,1           , Amount of first layer of low cloud at 06 hours Local Time, in eighths.
+716-719       ,4           , Height of base of first layer of low cloud at 06 hours Local Time, in m.
+721           ,1           , -* Code for type of first layer of low cloud at 06 hours Local Time.
+723           ,1           , Amount of first layer of low cloud at 09 hours Local Time, in eighths.
+725-728       ,4           , Height of base of first layer of low cloud at 09 hours Local Time, in m.
+730           ,1           , -* Code for type of first layer of low cloud at 09 hours Local Time.
+732           ,1           , Amount of first layer of low cloud at 12 hours Local Time, in eighths.
+734-737       ,4           , Height of base of first layer of low cloud at 12 hours Local Time, in m.
+739           ,1           , -* Code for type of first layer of low cloud at 12 hours Local Time.
+741           ,1           , Amount of first layer of low cloud at 15 hours Local Time, in eighths.
+743-746       ,4           , Height of base of first layer of low cloud at 15 hours Local Time, in m.
+748           ,1           , -* Code for type of first layer of low cloud at 15 hours Local Time.
+750           ,1           , Amount of first layer of low cloud at 18 hours Local Time, in eighths.
+752-755       ,4           , Height of base of first layer of low cloud at 18 hours Local Time, in m.
+757           ,1           , -* Code for type of first layer of low cloud at 18 hours Local Time.
+759           ,1           , Amount of first layer of low cloud at 21 hours Local Time, in eighths.
+761-764       ,4           , Height of base of first layer of low cloud at 21 hours Local Time, in m.
+766           ,1           , -* Code for type of first layer of low cloud at 21 hours Local Time.
+768           ,1           , Amount of second layer of low cloud at 00 hours Local Time, in eighths.
+770-773       ,4           , Height of base of second layer of low cloud at 00 hours Local Time, in m.
+775           ,1           , Amount of second layer of low cloud at 03 hours Local Time, in eighths.
+777-780       ,4           , Height of base of second layer of low cloud at 03 hours Local Time, in m.
+782           ,1           , Amount of second layer of low cloud at 06 hours Local Time, in eighths.
+784-787       ,4           , Height of base of second layer of low cloud at 06 hours Local Time, in m.
+789           ,1           , Amount of second layer of low cloud at 09 hours Local Time, in eighths.
+791-794       ,4           , Height of base of second layer of low cloud at 09 hours Local Time, in m.
+796           ,1           , Amount of second layer of low cloud at 12 hours Local Time, in eighths.
+798-801       ,4           , Height of base of second layer of low cloud at 12 hours Local Time, in m.
+803           ,1           , Amount of second layer of low cloud at 15 hours Local Time, in eighths.
+805-808       ,4           , Height of base of second layer of low cloud at 15 hours Local Time, in m.
+810           ,1           , Amount of second layer of low cloud at 18 hours Local Time, in eighths.
+812-815       ,4           , Height of base of second layer of low cloud at 18 hours Local Time, in m.
+817           ,1           , Amount of second layer of low cloud at 21 hours Local Time, in eighths.
+819-822       ,4           , Height of base of second layer of low cloud at 21 hours Local Time, in m.
+824-828       ,5           , Visibility at 00 hours Local Time, in km.
+830-834       ,5           , Visibility at 03 hours Local Time, in km.
+836-840       ,5           , Visibility at 06 hours Local Time, in km.
+842-846       ,5           , Visibility at 09 hours Local Time, in km.
+848-852       ,5           , Visibility at 12 hours Local Time, in km.
+854-858       ,5           , Visibility at 15 hours Local Time, in km.
+860-864       ,5           , Visibility at 18 hours Local Time, in km.
+866-870       ,5           , Visibility at 21 hours Local Time, in km.
+872           ,1           , # symbol, end of record indicator.
+
+
+
+
+-*- MOISTURE EQUATIONS
+______________________
+
+The following formulas have been used: 
+
+Vapour pressure = exp (1.8096 + (17.269425 * Dew_Point)/(237.3 + Dew_Point))
+
+Saturated Vapour pressure =  exp (1.8096 + (17.269425 * Air_Temperature)/(237.3 + Air_Temperature))
+
+Relative Humidity = Vapour pressure / Saturated vapour pressure * 100
+
+Relative humidity (RH) is obtained either from measurements by an electronic relative humidity sensor or derived 
+via complex equations from wet and dry bulb temperature observations. There can be slight differences between RH 
+values measured directly by a relative humidity sensor and those derived using equations. Typically these 
+differences are less than 1%. The uncertainty associated with RH data increases at the extremes. That is, in 
+very dry air as RH approaches 0%, and in very humid conditions as RH approaches 100%. There are some occasions 
+when reported RH values may slightly exceed 100%. In these instances you should consider the value to be 100%.
+
+
+
+
+-*-* WIND
+_________
+
+A strong wind is said to have occurred if the mean wind speed was in the range 22-33 knots, while
+a day is marked as recording gale force winds if the speed reaches 34 knots or more.
+
+
+
+
+** PRECIPITATION TYPES
+______________________
+
+Each type of precipitation type has a code. For rainfall data products which
+include this code, the meanings are as follows:
+1 RAIN
+2 FOG
+3 FROST
+4 DEW
+5 TRACE
+6 SNOW
+7 OTHER
+
+
+
+
+*** PAST/PRESENT WEATHER PHENOMENA TYPES
+________________________________________
+
+Each type of weather phenomena type has a code. For past/present weather products
+which include this code, the meanings are as follows:
+0-3   Fine
+4     Smoke
+5     Haze
+6-7   Dust
+8     Dust whirls
+9     Dust storm
+10    Mist
+11,41 Fog patches
+12    Shallow fog
+13    Lightning
+14    Distant/nearby virga
+15-16 Distant precipitation
+17    Thunder
+18    Squall
+19    Funnel cloud
+20    Recent drizzle
+21    Recent rain
+22,26 Recent snow
+23    Recent rain and snow
+24    Recent precipitation
+25    Recent shower
+27    Recent hail
+28    Recent fog
+29    Recent thunderstorm
+30-32 Dust storm
+33-35 Severe dust storm
+36-37 Drifting snow
+38-39 Blowing snow
+40    Distant fog
+42-49 Fog
+50-55 Drizzle
+56-57 Freezing drizzle
+58-59 Drizzle
+60-65 Rain
+66-67 Freezing rain
+68-69 Sleet
+70-75 Snow
+76    Ice prisms
+77    Snow grains
+78    Starlike crystals
+79    Ice pellets
+80-81 Shower
+82    Violent shower
+83-84 Sleet
+85-86 Snow shower
+87-88 Soft hail shower
+89-90 Hail shower
+91-95 Thunderstorm
+96,99 Thunderstorm and hail
+97    Heavy thunderstorm
+98    Thunderstorm and dust
+
+
+
+
+-* FIRST AND SECOND LAYER OF LOW CLOUD TYPE CODES
+_________________________________________________
+
+Generally occurs with bases up to 8500ft, may occur at higher levels in tropical
+or inland areas.
+Each type of cloud type has a code. For cloud products which include this code,
+the meanings are as follows:
+0  No low clouds
+1  Fine weather Cumulus (Cu), little vertical development
+2  Large Cu, flat bases
+3  Cumulonimbus (Cb) without anvil or fibrous cirriform top
+4  Stratocumulus (Sc) formed from the spreading out of Cu, Cu also often present
+5  Sc not formed from the spreading out of Cu
+6  Stratus (St) or fractostratus (Fs), or both, but not Fs of bad weather (*)
+7  Fs or fractocumulus (Fc) or bad weather (*) (scud) usually under nimbostratus (Ns),
+   altostratus (As) or Cb
+8  Cu and Sc, other than those formed from the spreading out of Cu, with bases
+   at different levels 
+9  Cb with fibrous cirriform top, often anvil-shaped
+
+(*) Bad weather denotes the conditions which generally exist during precipitation, and
+    a short time before and after.
+
+
+
+
+***- WIND MEASUREMENTS
+______________________
+
+1. The Bureau's wind measurements are designed to satisfy weather and climate monitoring needs.
+The Bureau's current uncertainty tolerances for wind speed measurements are +/- 10% of the 
+wind speed for wind speeds greater than 10 m/s and +/- 1 m/s for wind speeds at or below 10 m/s.
+As equipment is modernised at observing sites, the Bureau's continuous improvement requirement
+is to ensure that no change in equipment or algorithm results in wind speed measurements with
+a higher uncertainty, and where possible decreases uncertainty.
+2. In 2010, with the incorporation of new monitoring equipment with improved algorithms to
+convert raw outputs into wind speed, a step change downwards in the wind speed measurements
+has occurred of the order of 0.5 m/s at some sites. Investigations have not lead to any evidence
+that the wind speed measurements using the Telvent AWS are outside the Bureau's uncertainty
+tolerance.  We are confident that the new measurements provide a better estimate of the true
+wind speed, and may ultimately result in revised and improved uncertainty tolerances for Bureau
+wind speed measurements of both the past and future. We are now investigating ways to apply this
+knowledge to the past wind record.
+
+
+
+
+GAPS AND MISSING DATA
+_____________________
+
+Very few sites have a complete unbroken record of climate information. A site
+may have been closed, reopened, upgraded to a full weather site or downgraded
+to a rainfall only site during its existence causing breaks in the record for
+some or all elements. Some gaps may be for one element due to a damaged
+instrument, others may be for all elements due to the absence or illness of
+an observer.
+
+
+
+
+INSTUMENTS AND OBSERVATIONAL PRACTICES
+______________________________________
+
+Historically a nearby site (within about 1 mile in earlier days) may have used the same 
+site number.  There may have been changes in instrumentation and/or observing practices
+over the period included in a dataset, which may have an effect on the long-term record.
+In recent years many sites have had observers replaced by Automatic Weather Stations,
+either completely or at certain times of the day.  
+
+
+
+
+TIME
+____
+
+For a part of the year some Australian States adopt Daylight Savings Time (DST), and
+observers continue to take observations according to the local clock.  Times provided 
+with this data are Local Time, unless otherwise noted. 
+
+Care needs to be taken when comparing values from year to year or month to month, because for
+some elements the effect of one hour can be marked, for example air temperature often rises 
+sharply between 8am and 9am.
+
+Daylight Savings has been used in many Australian states since 1973. The
+changeovers occur almost always in October and March, but exact dates vary
+from State to State and year to year. More information can be found at:
+http://www.bom.gov.au/climate/averages/tables/daysavtm.shtml
+
+
+
+
+ROUNDING
+________
+
+The primary way of sending current weather information around the world is via a coded message 
+known as a SYNOP.  This message only allows some measurements to be sent as rounded values.  
+Once manuscript records have been sent in many of these values are typed in with greater 
+precision (normally to one decimal place). This usually occurs within a few months.
+
+If consecutive values all have a zero in the decimal place, then it is almost certain that
+rounding was used earlier.  A new type of message format is progressively being introduced to
+overcome this situation.
+
+
+
+
+COPYRIGHT
+_________
+
+The copyright for any data is held in the Commonwealth of Australia and the purchaser
+shall give acknowledgement of the source in reference to the data.  Apart from dealings
+under the copyright Act, 1968, the purchaser shall not reproduce, modify or supply (by
+sale or otherwise) these data without written permission.  Enquiries should be made
+to the Bureau of Meteorology, PO Box 1289K, Melbourne 3001, marked to the attention of SRDS.
+
+
+
+
+LIABILITY
+_________
+
+While every effort is made to supply the best data available this may not be possible
+in all cases.  We do not give any warranty, nor accept any liability in relation
+to the information given, except that liability (if any), that is required by law.
+
+
+
+
+
+IF DATA IS NOT AS REQUESTED
+___________________________
+
+If the data provided are not as requested, the data will be repeated at no extra cost, 
+provided that:
+a) the Bureau is notified within 60 days.
+b) the printout/disc/data file is returned to the Bureau for checking.
+c) there has been a fault or error in providing the data.
+
+Where there has been no fault or error of provision, the cost involved in
+requested corrective action such as resending the data or providing alternative
+sites will be charged for as necessary.
+
+
+
+
+____________________________________________________________________________________________
+____________________________________________________________________________________________
+
+SITE DETAILS FILE
+
+This file contains the details for the current site or are those which applied when the site
+was closed.  Many sites have been moved, downgraded, upgraded etc over the years.
+
+Byte Location , Byte Size  , Explanation
+--------------------------------------------------------------------------------------------
+
+
+1-2           ,2           , Record identifier - st
+4-9           ,6           , Bureau of Meteorology Station Number.
+11-14         ,4           , Rainfall district code
+16-55         ,40          , Station Name.
+57-63         ,7           , Month/Year site opened. (MM/YYYY)
+65-71         ,7           , Month/Year site closed. (MM/YYYY)
+73-80         ,8           , Latitude to 4 decimal places, in decimal degrees.
+82-90         ,9           , Longitude to 4 decimal places, in decimal degrees.
+92-106        ,15          , Method by which latitude/longitude was derived.
+108-110       ,3           , State.
+112-117       ,6           , Height of station above mean sea level in metres.
+119-124       ,6           , Height of barometer above mean sea level in metres.
+126-130       ,5           , WMO (World Meteorological Organisation) Index Number.
+132-135       ,4           , First year of data supplied in data file.
+137-140       ,4           , Last year of data supplied in data file.
+142-144       ,3           , Percentage complete between first and last records.
+146-148       ,3           , Percentage of values with quality flag 'Y'.
+150-152       ,3           , Percentage of values with quality flag 'N'.
+154-156       ,3           , Percentage of values with quality flag 'W'.
+158-160       ,3           , Percentage of values with quality flag 'S'.
+162-164       ,3           , Percentage of values with quality flag 'I'.
+166           ,1           , # symbol, end of record indicator.
+
+
+
+
+LATITUDES AND LONGITUDES
+________________________
+
+Latitudes and longitudes are given to 4 decimal places, but in many cases will not be
+accurate to 4 decimal places.  This is because in the early days the positions of stations
+were estimated from maps. Gradually the network of open stations is being checked (and
+if necessary corrected) using GPS (Global Positioning System). The method used is given
+in the site details file.
+
+
+
+
+WMO INDEX NUMBER
+________________
+
+This is the number assigned to a site that makes international weather reports every day.
+The number is not actively used in the climate archive, and only a few hundred such 
+numbers are assigned at any time.  These are not perpetual but may be reassigned 
+where a site no longer makes the international reports (synops); thus a particular
+number cannot be regarded as unique and exclusive to any particular site.
+
+
+
+
+PERCENTAGE INFORMATION
+______________________
+
+In some cases the percentage completeness will be overestimated. This will occur if the
+database has incomplete information about the element being selected. In cases where several
+elements are selected, rows with a least one of the elements available are considered
+complete. Where only a limited amount of data is available and the percentage completeness
+is less than 0.5%, an "*" has been used.
+
+An "*" is also used if the percentage of values with a particular quality flag is non zero
+and less than 0.5%.
